@@ -71,8 +71,8 @@ App = {
         const contract = await App.contracts.MyContract.deployed()
         App.contractInstance = contract
 
-        const value = await App.contractInstance.get()
-        // const proof = "proof";
+        const value = await App.contractInstance.getUser()
+
         const proof = await App.contractInstance.getProof()
         $('#value').html(value)
         $('#proof').html(proof)
@@ -82,9 +82,9 @@ App = {
     set: async () => {
         App.setLoading(true)
 
-        const newValue = $('#newValue').val()
+        const newUser = $('#newUser').val()
         const newProof = $('#newProof').val()
-        await App.contractInstance.set(newValue, newProof, {from: App.account})
+        await App.contractInstance.set(newUser, newProof, {from: App.account})
         // await App.contractInstance.setProof(newProof, {from: App.account})
         
         window.alert('更新成功，页面值不会马上更新，等待几秒后多刷新几次。')
