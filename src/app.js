@@ -72,8 +72,10 @@ App = {
         App.contractInstance = contract
 
         const value = await App.contractInstance.get()
+        // const proof = "proof";
+        const proof = await App.contractInstance.getProof()
         $('#value').html(value)
-
+        $('#proof').html(proof)
         App.setLoading(false)
     },
 
@@ -81,8 +83,10 @@ App = {
         App.setLoading(true)
 
         const newValue = $('#newValue').val()
-
-        await App.contractInstance.set(newValue, {from: App.account})
+        const newProof = $('#newProof').val()
+        await App.contractInstance.set(newValue, newProof, {from: App.account})
+        // await App.contractInstance.setProof(newProof, {from: App.account})
+        
         window.alert('更新成功，页面值不会马上更新，等待几秒后多刷新几次。')
         App.setLoading(false)
     },

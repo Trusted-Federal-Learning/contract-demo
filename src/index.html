@@ -19,11 +19,14 @@
       <div id="content">
           <h2>智能合约：MyContract</b></h2>
           <p>获取智能合约中的value值: <span id="value"></span></p>
-
+          <p>Get the Proof: <span id = "proof"></span></p>
             <h5>设置value值</h5>
             <form onSubmit="App.set(); return false;" role="form">
-            <div >
+            <div>
                 <input id="newValue"  type="text"></input>
+            </div>
+            <div>
+              <input id = "newProof" type ="text"></input>
             </div>
             <button type="submit" >设置</button>
             </form>

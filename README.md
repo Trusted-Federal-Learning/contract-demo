@@ -1,5 +1,11 @@
-# contract-demo
-智能合约模块：用于在链上存储各节点的Proof
+# Proof-Contract
+智能合约模块：用于在链上存储各节点的`Proof`
+
+#### 安装依赖
+
+```bash
+npm install
+```
 
 
 
@@ -12,7 +18,7 @@ truffle compile
 ganache-cli
 # 开启测试网络
 
-truffle migrate
+truffle migrate --reset
 # 合约移植
 ```
 
@@ -21,7 +27,6 @@ truffle migrate
 #### 运行方式
 
 ```bash
-npm install
 npm run dev
 ```
 
